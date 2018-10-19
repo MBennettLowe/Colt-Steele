@@ -5,32 +5,29 @@ var p2Display = document.querySelector("#p2Display");
 var p1Score = 0;
 var p2Score = 0;
 var gameOver = false;
-var winningscore = 5;
+var winningScore = 5;
 
-
-
+//Player one score setup
 
 p1Button.addEventListener("click", function(){
     if(!gameOver){
         p1Score++;
-        if(p1Score === winningscore){
+        if(p1Score === winningScore){
+            p1Display.classList.add("winner");
             gameOver = true;
         }
-       
-        p1Display.textContent =p1Score;
-        
-    }
-   
+       p1Display.textContent =p1Score;  
+    }  
 });
 
+//Player two score setup
 p2Button.addEventListener("click", function(){
-    console.log("CONNECTED!");
-     if(!gameOver){
+        if(!gameOver){
         p2Score++;
-        if(p2Score === winningscore){
-            gameOver = true;
+        if(p2Score === winningScore){
+        p2Display.classList.add("winner");
+        gameOver = true;
         }
-       
-    p2Display.textContent =p2Score;
+        p2Display.textContent =p2Score;
      }
 });
